@@ -1,9 +1,6 @@
 package university;
 
-import university.averageCalculator.Average;
-import university.averageCalculator.CourseFacultyAverage;
-import university.averageCalculator.CourseGroupAverage;
-import university.averageCalculator.TotalAverage;
+import university.averageCalculator.*;
 import university.exceptions.*;
 
 public class Main {
@@ -51,6 +48,9 @@ public class Main {
 
             Average facultyGradeAverage = new CourseFacultyAverage(faculty1, "Intro to OOP");
             System.out.println("The average grade from Intro to OOP for the faculty " + faculty1.getFacultyName() + " is: " + facultyGradeAverage.getAverage());
+
+            Average universityGradeAverage = new CourseUniversityAverage(aua, "Intro to OOP");
+            System.out.println("The average grade from Intro to OOP for the entire university is " + universityGradeAverage.getAverage());
 
         } catch (NullCourseException | GradeValueException | NullStudentException | NullGroupException | NullFacultyException e) {
             e.printStackTrace();

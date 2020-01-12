@@ -21,10 +21,10 @@ public class Main {
             Student student5 = new Student("s5", "Adam", "Levine", new Course[]{cs120, cs121, cs311, cs323}, new Grade[]{new Grade(9.7), new Grade(8), new Grade(7), new Grade(9.7)});
             Student student6 = new Student("s6", "Roy", "Jones", new Course[]{cs120, cs121, cs311, cs323}, new Grade[]{new Grade(8.6), new Grade(6), new Grade(5.5), new Grade(10)});
             Student student7 = new Student("s7", "Ann", "Stone", new Course[]{iesm360, iesm315, iesm347}, new Grade[]{new Grade(8.5), new Grade(9), new Grade(7.4)});
-            Student student8 = new Student("s8", "Karma", "Lee", new Course[]{iesm315, iesm347, iesm362}, new Grade[]{new Grade(6.5), new Grade(7.5), new Grade(6.5)});
+            Student student8 = new Student("s8", "Karma", "Lee", new Course[]{cs120, iesm315, iesm347, iesm362}, new Grade[]{new Grade(5.5), new Grade(6.5), new Grade(7.5), new Grade(6.5)});
             Student student9 = new Student("s9", "Tom", "Ford", new Course[]{iesm360, iesm315, iesm347}, new Grade[]{new Grade(9), new Grade(8.8), new Grade(10)});
             Student student10 = new Student("s10", "Serena", "Williams", new Course[]{iesm360, iesm315, iesm347, iesm362}, new Grade[]{new Grade(8), new Grade(7.5), new Grade(9.5), new Grade(10)});
-            Student student11 = new Student("s11", "Madison", "Keys", new Course[]{iesm360, iesm315, iesm347, iesm362}, new Grade[]{new Grade(10), new Grade(8), new Grade(9.5), new Grade(8.5)});
+            Student student11 = new Student("s11", "Madison", "Keys", new Course[]{cs120, iesm360, iesm315, iesm347, iesm362}, new Grade[]{new Grade(7), new Grade(10), new Grade(8), new Grade(9.5), new Grade(8.5)});
             Student student12 = new Student("s12", "Sloane", "Stephens", new Course[]{iesm360, iesm315, iesm347, iesm362}, new Grade[]{new Grade(9.5), new Grade(10), new Grade(8), new Grade(10)});
 
             Group group1 = new Group("Software Engineering", new Student[]{student1, student2, student3, student4});
@@ -41,7 +41,5 @@ public class Main {
         } catch (NullCourseException | GradeValueException | NullStudentException | NullGroupException | NullFacultyException e) {
             e.printStackTrace();
         }
-
-
     }
 }

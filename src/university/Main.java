@@ -1,6 +1,7 @@
 package university;
 
 import university.averageCalculator.Average;
+import university.averageCalculator.CourseFacultyAverage;
 import university.averageCalculator.CourseGroupAverage;
 import university.averageCalculator.TotalAverage;
 import university.exceptions.*;
@@ -47,6 +48,9 @@ public class Main {
 
             Average groupGradeAverage = new CourseGroupAverage(group1, "Intro to OOP");
             System.out.println("The average grade from Intro to OOP for the group " + group1.getName() + " is: " + groupGradeAverage.getAverage());
+
+            Average facultyGradeAverage = new CourseFacultyAverage(faculty1, "Intro to OOP");
+            System.out.println("The average grade from Intro to OOP for the faculty " + faculty1.getFacultyName() + " is: " + facultyGradeAverage.getAverage());
 
         } catch (NullCourseException | GradeValueException | NullStudentException | NullGroupException | NullFacultyException e) {
             e.printStackTrace();

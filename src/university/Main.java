@@ -1,5 +1,7 @@
 package university;
 
+import university.averageCalculator.Average;
+import university.averageCalculator.TotalAverage;
 import university.exceptions.*;
 
 public class Main {
@@ -37,6 +39,9 @@ public class Main {
 
             University aua = new University("AUA", "40 Marshal Baghramyan Ave, Yerevan, Armenia", "www.aua.am", "(010) 324040", new Faculty[]{faculty1, faculty2});
             System.out.println(aua);
+
+            Average studentAverage = new TotalAverage(student1);
+            System.out.println("The Total average grade of " + student1.getName() + " " + student1.getSurname() + " is: " + studentAverage.getAverage());
 
         } catch (NullCourseException | GradeValueException | NullStudentException | NullGroupException | NullFacultyException e) {
             e.printStackTrace();

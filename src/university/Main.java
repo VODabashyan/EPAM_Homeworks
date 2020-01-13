@@ -14,19 +14,79 @@ public class Main {
         Course iesm347 = new Course("IESM 347", "Design and Innovation of Information Services");
         Course iesm362 = new Course("IESM 362", "Advanced CAD/CAM Applications");
 
+
         try {
-            Student student1 = new Student("s1", "Mark", "Miller", new Course[]{cs120, cs121, cs311}, new Grade[]{new Grade(9.7), new Grade(8), new Grade(7)});
-            Student student2 = new Student("s2", "James", "Thomson", new Course[]{cs121, cs311, cs323}, new Grade[]{new Grade(5), new Grade(9.5), new Grade(6)});
-            Student student3 = new Student("s3", "Blake", "Shelton", new Course[]{cs120, cs121, cs311}, new Grade[]{new Grade(9.7), new Grade(7.7), new Grade(7)});
-            Student student4 = new Student("s4", "James", "Thomson", new Course[]{cs121, cs311, cs323}, new Grade[]{new Grade(9.8), new Grade(7.5), new Grade(8)});
-            Student student5 = new Student("s5", "Adam", "Levine", new Course[]{cs120, cs121, cs311, cs323}, new Grade[]{new Grade(9.7), new Grade(8), new Grade(7), new Grade(9.7)});
-            Student student6 = new Student("s6", "Roy", "Jones", new Course[]{cs120, cs121, cs311, cs323}, new Grade[]{new Grade(8.6), new Grade(6), new Grade(5.5), new Grade(10)});
-            Student student7 = new Student("s7", "Ann", "Stone", new Course[]{iesm360, iesm315, iesm347}, new Grade[]{new Grade(8.5), new Grade(9), new Grade(7.4)});
-            Student student8 = new Student("s8", "Karma", "Lee", new Course[]{cs120, iesm315, iesm347, iesm362}, new Grade[]{new Grade(5.5), new Grade(6.5), new Grade(7.5), new Grade(6.5)});
-            Student student9 = new Student("s9", "Tom", "Ford", new Course[]{iesm360, iesm315, iesm347}, new Grade[]{new Grade(9), new Grade(8.8), new Grade(10)});
-            Student student10 = new Student("s10", "Serena", "Williams", new Course[]{iesm360, iesm315, iesm347, iesm362}, new Grade[]{new Grade(8), new Grade(7.5), new Grade(9.5), new Grade(10)});
-            Student student11 = new Student("s11", "Madison", "Keys", new Course[]{cs120, iesm360, iesm315, iesm347, iesm362}, new Grade[]{new Grade(7), new Grade(10), new Grade(8), new Grade(9.5), new Grade(8.5)});
-            Student student12 = new Student("s12", "Sloane", "Stephens", new Course[]{iesm360, iesm315, iesm347, iesm362}, new Grade[]{new Grade(9.5), new Grade(10), new Grade(8), new Grade(10)});
+            Student student1 = new Student.StudentBuilder()
+                    .studentId("s1").name("Mark").surname("Miller")
+                    .courses(new Course[]{cs120, cs121, cs311})
+                    .grades(new Grade[]{new Grade(9.7), new Grade(8), new Grade(7)})
+                    .build();
+
+            Student student2 = new Student.StudentBuilder()
+                    .studentId("s2").name("James").surname("Thomson")
+                    .courses(new Course[]{cs121, cs311, cs323})
+                    .grades(new Grade[]{new Grade(5), new Grade(9.5), new Grade(6)})
+                    .build();
+
+            Student student3 = new Student.StudentBuilder()
+                    .studentId("s3").name("Blake").surname("Shelton")
+                    .courses(new Course[]{cs120, cs121, cs311})
+                    .grades(new Grade[]{new Grade(9.7), new Grade(7.7), new Grade(7)})
+                    .build();
+
+            Student student4 = new Student.StudentBuilder()
+                    .studentId("s4").name("Mike").surname("Cooper")
+                    .courses(new Course[]{cs121, cs311, cs323})
+                    .grades(new Grade[]{new Grade(9.8), new Grade(7.5), new Grade(8)})
+                    .build();
+
+            Student student5 = new Student.StudentBuilder()
+                    .studentId("s5").name("Adam").surname("Levine")
+                    .courses(new Course[]{cs120, cs121, cs311, cs323})
+                    .grades(new Grade[]{new Grade(9.7), new Grade(8), new Grade(7), new Grade(9.7)})
+                    .build();
+
+            Student student6 = new Student.StudentBuilder()
+                    .studentId("s6").name("Roy").surname("Jones")
+                    .courses(new Course[]{cs120, cs121, cs311, cs323})
+                    .grades(new Grade[]{new Grade(8.6), new Grade(6), new Grade(5.5), new Grade(10)})
+                    .build();
+
+            Student student7 = new Student.StudentBuilder()
+                    .studentId("s7").name("Ann").surname("Stone")
+                    .courses(new Course[]{iesm360, iesm315, iesm347})
+                    .grades(new Grade[]{new Grade(8.5), new Grade(9), new Grade(7.4)})
+                    .build();
+
+            Student student8 = new Student.StudentBuilder()
+                    .studentId("s8").name("Karma").surname("Lee")
+                    .courses(new Course[]{cs120, iesm315, iesm347, iesm362})
+                    .grades(new Grade[]{new Grade(5.5), new Grade(6.5), new Grade(7.5), new Grade(6.5)})
+                    .build();
+
+            Student student9 = new Student.StudentBuilder()
+                    .studentId("s9").name("Tom").surname("Ford")
+                    .courses(new Course[]{iesm360, iesm315, iesm347})
+                    .grades(new Grade[]{new Grade(9), new Grade(8.8), new Grade(10)})
+                    .build();
+
+            Student student10 = new Student.StudentBuilder()
+                    .studentId("s10").name("Serena").surname("Williams")
+                    .courses(new Course[]{iesm360, iesm315, iesm347, iesm362})
+                    .grades(new Grade[]{new Grade(8), new Grade(7.5), new Grade(9.5), new Grade(10)})
+                    .build();
+
+            Student student11 = new Student.StudentBuilder()
+                    .studentId("s11").name("Madison").surname("Keys")
+                    .courses(new Course[]{cs120, iesm360, iesm315, iesm347, iesm362})
+                    .grades(new Grade[]{new Grade(7), new Grade(10), new Grade(8), new Grade(9.5), new Grade(8.5)})
+                    .build();
+
+            Student student12 = new Student.StudentBuilder()
+                    .studentId("s11").name("Sloane").surname("Stephens")
+                    .courses(new Course[]{iesm360, iesm315, iesm347, iesm362})
+                    .grades(new Grade[]{new Grade(9.5), new Grade(10), new Grade(8), new Grade(10)})
+                    .build();
 
             Group group1 = new Group("Software Engineering", new Student[]{student1, student2, student3, student4});
             Group group2 = new Group("Theoretical CS", new Student[]{student5, student6});

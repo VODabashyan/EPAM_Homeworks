@@ -10,62 +10,82 @@ public class Student {
     private Course[] courses;
     private Grade[] grades;
 
-    public Student(String studentId, String name, String surname, Course[] courses, Grade[] grades) throws NullCourseException {
-        setStudentId(studentId);
-        setName(name);
-        setSurname(surname);
-        setCourses(courses);
-        setGrades(grades);
+    public Student(StudentBuilder sb) {
+        studentId = sb.studentId;
+        name = sb.name;
+        surname = sb.surname;
+        courses = sb.courses;
+        grades = sb.grades;
+    }
+
+    public static class StudentBuilder {
+        private String studentId;
+        private String name;
+        private String surname;
+        private String email;
+        private Course[] courses;
+        private Grade[] grades;
+
+        public StudentBuilder studentId(String studentId) {
+            this.studentId = studentId;
+            return this;
+        }
+
+        public StudentBuilder name(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public StudentBuilder surname(String surname) {
+            this.surname = surname;
+            return this;
+        }
+
+        public StudentBuilder email(String email) {
+            this.email = email;
+            return this;
+        }
+
+        public StudentBuilder courses(Course[] courses) {
+            this.courses = courses;
+            return this;
+        }
+
+        public StudentBuilder grades(Grade[] grades) {
+            this.grades = grades;
+            return this;
+        }
+
+        public Student build() throws NullCourseException {
+            if (courses.length == 0) {
+                throw new NullCourseException();
+            }
+            Student student = new Student(this);
+            return student;
+        }
     }
 
     public String getStudentId() {
         return studentId;
     }
 
-    public void setStudentId(String studentId) {
-        this.studentId = studentId;
-    }
-
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getSurname() {
         return surname;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
     public String getEmail() {
         return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public Course[] getCourses() {
         return courses;
     }
 
-    public void setCourses(Course[] courses) throws NullCourseException {
-        if(courses.length == 0) {
-            throw new NullCourseException();
-        }
-        this.courses = courses;
-    }
-
     public Grade[] getGrades() {
         return grades;
-    }
-
-    public void setGrades(Grade[] grades) {
-        this.grades = grades;
     }
 }

@@ -1,6 +1,6 @@
 package student;
 
-public class Student {
+public class Student implements Comparable<Student> {
     private String firstName;
     private String lastName;
     private int age;
@@ -35,8 +35,14 @@ public class Student {
         this.age = age;
     }
 
+
     @Override
     public String toString() {
         return firstName + " " + lastName;
+    }
+
+    @Override
+    public int compareTo(Student student1) {
+        return lastName.compareTo(student1.lastName);//as Strings are naturally ordered in ascending order then we can use 'compareTo()' method of String.
     }
 }

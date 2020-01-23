@@ -1,5 +1,7 @@
 package student;
 
+import java.util.List;
+
 public class Student implements Comparable<Student> {
     private String firstName;
     private String lastName;
@@ -44,5 +46,11 @@ public class Student implements Comparable<Student> {
     @Override
     public int compareTo(Student student1) {
         return lastName.compareTo(student1.lastName);//as Strings are naturally ordered in ascending order then we can use 'compareTo()' method of String.
+    }
+
+    static void printList(List<Student> list) {
+        for (Student student : list) {
+            System.out.println(student);
+        }
     }
 }

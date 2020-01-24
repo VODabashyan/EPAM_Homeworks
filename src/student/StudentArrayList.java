@@ -29,38 +29,30 @@ public class StudentArrayList implements Iterable<Student> {
     }
 
     public boolean remove(Student s) {
-        int matchedElementIndex = 0;
+        int nullIndex = 0;
         if (arraySize != 0) {
             for (int i = 0; i < arraySize; i++) {
                 if (students[i] == s) {
-                    matchedElementIndex = i;
                     students[i] = null;
+                    nullIndex = i;
                     break;
                 }
-
+            }
+            Student temp[] = new Student[arraySize - 1];
+            for (int i = 0; i < nullIndex; i++) {
+                temp[i] = students[i];
             }
 
-            for (int j = matchedElementIndex; j < arraySize - 1; j++) {
-                students[j] = students[j + 1];
-                students[arraySize - 1] = null;
+            for (int i = nullIndex; i < arraySize - 1; i++) {
+                temp[i] = students[i + 1];
             }
+            students = temp;
             arraySize--;
             return true;
         } else {
             return false;
         }
     }
-
-    private void shift(int index) {
-        Student[] students = new Student[capacity];
-
-        for (int i = index; i < students.length - 1; i++) {
-            students[i] = students[i + 1];
-        }
-
-        students[students.length - 1] = null;
-    }
-
 
     public int size() {
         return arraySize;

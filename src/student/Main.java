@@ -30,6 +30,11 @@ public class Main {
         List<Student> LinkedListOfStudents = new LinkedList<>(Arrays.asList(students));
         Collections.sort(LinkedListOfStudents);
         Student.printList(LinkedListOfStudents);
+        System.out.println();
+
+        StudentListInitializerAndPrinter s = new StudentListInitializerAndPrinter(students);
+        s.initializeList();
+        s.printList();
 
     }
 }

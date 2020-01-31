@@ -1,6 +1,9 @@
 package mapandenum;
 
 import java.util.*;
+import static mapandenum.Months.*;
+
+
 
 public class Main {
     public static void main(String[] args) {
@@ -32,6 +35,14 @@ public class Main {
         getFacultyStudentsCount(students, "English");
         getFacultyStudentsCount(students, "CIS");
         System.out.println();
+
+        printHolidays(APRIL);
+        System.out.println(getDayCount(MARCH));
+        printMonths();
+        System.out.println();
+        checkPublicHoliday(MARCH, 8);
+        checkPublicHoliday(MARCH, 21);
+        checkPublicHoliday(JUNE, 20);
     }
 
     static Map<String, Integer> getStudentsMap(List<Student> students) {

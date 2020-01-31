@@ -3,8 +3,6 @@ package mapandenum;
 import java.util.*;
 import static mapandenum.Months.*;
 
-
-
 public class Main {
     public static void main(String[] args) {
         List<Student> students = new ArrayList<Student>();

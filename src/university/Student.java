@@ -10,7 +10,7 @@ public class Student {
     private Course[] courses;
     private Grade[] grades;
 
-    public Student(StudentBuilder sb) {
+    private Student(StudentBuilder sb) {
         studentId = sb.studentId;
         name = sb.name;
         surname = sb.surname;

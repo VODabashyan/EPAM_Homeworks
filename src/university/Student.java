@@ -58,7 +58,19 @@ public class Student {
 
         public Student build() throws NullCourseException {
             if (courses.length == 0) {
-                throw new NullCourseException();
+                throw new NullCourseException("A student should take at least one course!");
+            }
+
+            if (courses == null) {
+                throw new NullCourseException("The course cannot be null!");
+            }
+
+            if (courses != null && courses.length != 0) {
+                for (Course course : courses) {
+                    if (course == null) {
+                        throw new NullCourseException("Null course detected! A course cannot be null!");
+                    }
+                }
             }
             Student student = new Student(this);
             return student;

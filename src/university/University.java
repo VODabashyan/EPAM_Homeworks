@@ -2,6 +2,7 @@ package university;
 
 import university.exceptions.NullFacultyException;
 
+
 public class University {
     private String name;
     private String address;
@@ -55,9 +56,20 @@ public class University {
 
     public void setFaculties(Faculty[] faculties) throws NullFacultyException {
         if (faculties.length == 0) {
-            throw new NullFacultyException();
+            throw new NullFacultyException("There should be at least one faculty!");
         }
 
+        if (faculties == null) {
+            throw new NullFacultyException("A faculty cannot be null!");
+        }
+
+        if (faculties != null && faculties.length != 0) {
+            for (Faculty faculty : faculties) {
+                if (faculty == null) {
+                    throw new NullFacultyException("Null faculty detected! A faculty cannot be null!");
+                }
+            }
+        }
         this.faculties = faculties;
     }
 

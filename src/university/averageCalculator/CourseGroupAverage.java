@@ -22,7 +22,7 @@ public class CourseGroupAverage implements Average {
             Course[] courses = students[i].getCourses();
             Grade[] grades = students[i].getGrades();
             for (int j = 0; j < courses.length; j++) {
-                if (courseName == courses[j].getCourseName()) {
+                if (courseName.equals(courses[j].getCourseName())) {
                     gradeSum += grades[j].getStudentGrade();
                     count++;
                 }

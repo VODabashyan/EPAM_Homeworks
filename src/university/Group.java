@@ -26,8 +26,22 @@ public class Group {
 
     public void setStudents(Student[] students) throws NullStudentException {
         if (students.length == 0) {
-            throw new NullStudentException();
-        } else if (students.length > CAPACITY) {
+            throw new NullStudentException("There should be several students in a group!");
+        }
+
+        if (students == null) {
+            throw new NullStudentException("A Student cannot be null!");
+        }
+
+        if (students != null && students.length != 0) {
+            for (Student student : students) {
+                if (student == null) {
+                    throw new NullStudentException("Null student detected! A student cannot be null!");
+                }
+            }
+        }
+
+        if (students.length > CAPACITY) {
             System.err.println("The number of students exceeds the group capacity!");
             return;
         }

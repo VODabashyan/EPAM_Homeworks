@@ -33,8 +33,20 @@ public class Faculty {
     }
 
     public void setGroupNames(Group[] groupNames) throws NullGroupException {
-        if(groupNames.length == 0) {
-            throw new NullGroupException();
+        if (groupNames == null) {
+            throw new NullGroupException("A group cannot be null!");
+        }
+
+        if (groupNames.length == 0) {
+            throw new NullGroupException("There should be at least one group in a faculty!");
+        }
+
+        if (groupNames != null && groupNames.length != 0) {
+            for (Group group : groupNames) {
+                if (group == null) {
+                    throw new NullGroupException("Null group detected! A group cannot be null!");
+                }
+            }
         }
         this.groupNames = groupNames;
     }

@@ -15,7 +15,7 @@ public class Grade {
 
     public void setStudentGrade(double studentGrade) throws GradeValueException {
         if (studentGrade < 0 || studentGrade > 10) {
-            throw new GradeValueException();
+            throw new GradeValueException("Grade value should be within the range of [0;10]");
         }
         this.studentGrade = studentGrade;
     }

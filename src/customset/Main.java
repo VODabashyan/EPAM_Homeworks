@@ -1,5 +1,6 @@
 package customset;
 
+import customset.types.Coffee;
 import customset.types.Student;
 
 public class Main {
@@ -30,5 +31,37 @@ public class Main {
         System.out.println("The size after deletion is: " + studentSet.getSize());
         String result2 = studentSet.contains(s3) ? "YES" : "NO";
         System.out.println("Does the set contain the student " + s3.toString() + "? " + result2 + "\n");
+
+        System.out.println("\n/*************Coffee**************/\n");
+
+        Coffee c1 = new Coffee("Arabica", 3.46);
+        Coffee c2 = new Coffee("Robusta", 1.63);
+        Coffee c3 = new Coffee("Liberica", 1.52);
+        Coffee c4 = new Coffee("Excelsa", 2.23);
+        Coffee c5 = new Coffee("Typica", 4.50);
+        Coffee c6 = new Coffee("Bourbon", 2.70);
+        Coffee c7 = new Coffee("Robusta", 1.63);
+
+        CustomSet<Coffee> coffeeSet = new CustomSet<>();
+        coffeeSet.add(c1);
+        coffeeSet.add(c2);
+        coffeeSet.add(c3);
+        coffeeSet.add(c4);
+        coffeeSet.add(c5);
+        coffeeSet.add(c6);
+        coffeeSet.add(c7);
+
+        coffeeSet.printTree();
+        System.out.println("The size is " + coffeeSet.getSize());
+        String result3 = coffeeSet.contains(c5) ? "YES" : "NO";
+        System.out.println("Does the set contain the coffee type " + c5.getType() + "? " + result3 + "\n");
+
+        coffeeSet.remove(c5);
+        coffeeSet.remove(c3);
+        System.out.println("The coffee types present in the set after deletion are: ");
+        coffeeSet.printTree();
+        System.out.println("The size after deletion is: " + coffeeSet.getSize());
+        String result4 = coffeeSet.contains(c3) ? "YES" : "NO";
+        System.out.println("Does the set contain the coffee type " + c3.getType() + "? " + result4 + "\n");
     }
 }

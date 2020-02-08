@@ -1,4 +1,18 @@
 package customset;
+/**
+ * <h1>The implementation of my custom set</h1>
+ * The CustomSet class is a generic class that
+ * uses the notion of binary search tree
+ * to easily implement the main functionality
+ * of the Java TreeSet.
+ * <p>
+ * <b>Info:</b> The main methods of the program
+ * are 'add()', 'remove()', 'contains()' and 'getSize()'.
+ *
+ * @author  Vahe Odabashyan
+ * @version 1.0
+ * @since   2020-02-07
+ */
 
 public class CustomSet<T extends Comparable<T>> {
     private int size;
@@ -79,7 +93,13 @@ public class CustomSet<T extends Comparable<T>> {
         }
     }
 
-
+    /**
+     * This method is used to remove a node with
+     * the provided data from the tree.
+     * @param data This is the only parameter that is used to create a node
+     *             and remove it.
+     * @return boolean Returns 'true' if the deletion was successful.
+     */
     public boolean remove(T data) {
         Node<T> nodeToRemove = findNode(data);
         if (nodeToRemove == null) {

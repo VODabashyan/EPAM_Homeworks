@@ -1,6 +1,7 @@
 package customset;
 
 import customset.types.Coffee;
+import customset.types.Glasses;
 import customset.types.Student;
 
 public class Main {
@@ -63,5 +64,33 @@ public class Main {
         System.out.println("The size after deletion is: " + coffeeSet.getSize());
         String result4 = coffeeSet.contains(c3) ? "YES" : "NO";
         System.out.println("Does the set contain the coffee type " + c3.getType() + "? " + result4 + "\n");
+
+        System.out.println("\n/*************Glasses**************/\n");
+
+        Glasses g1 = new Glasses("Dior", "Sunglasses");
+        Glasses g2 = new Glasses("Ottoto", "Corrective");
+        Glasses g3 = new Glasses("Pyramex", "Safety");
+        Glasses g4 = new Glasses("Lacoste", "Sunglasses");
+        Glasses g5 = new Glasses("Dior", "Sunglasses");
+
+        CustomSet<Glasses> glassesSet = new CustomSet<>();
+        glassesSet.add(g1);
+        glassesSet.add(g2);
+        glassesSet.add(g3);
+        glassesSet.add(g4);
+        glassesSet.add(g5);
+
+
+        glassesSet.printTree();
+        System.out.println("The size is " + glassesSet.getSize());
+        String result5 = glassesSet.contains(g4) ? "YES" : "NO";
+        System.out.println("Does the set contain the glasses " + g4.toString() + "? " + result5 + "\n");
+
+        glassesSet.remove(g4);
+        System.out.println("The glasses present in the set after deletion are: ");
+        glassesSet.printTree();
+        System.out.println("The size after deletion is: " + glassesSet.getSize());
+        String result6 = glassesSet.contains(g4) ? "YES" : "NO";
+        System.out.println("Does the set contain the glasses " + g4.toString() + "? " + result6 + "\n");
     }
 }

@@ -22,7 +22,13 @@ public class Main {
         studentSet.printTree();
         System.out.println("The size is " + studentSet.getSize());
         String result = studentSet.contains(s3) ? "YES" : "NO";
-        System.out.println("Does the set contain the student " + s3.toString() + "? " + result);
+        System.out.println("Does the set contain the student " + s3.toString() + "? " + result + "\n");
 
+        studentSet.remove(s3);
+        System.out.println("The students present in the set after deletion are: ");
+        studentSet.printTree();
+        System.out.println("The size after deletion is: " + studentSet.getSize());
+        String result2 = studentSet.contains(s3) ? "YES" : "NO";
+        System.out.println("Does the set contain the student " + s3.toString() + "? " + result2 + "\n");
     }
 }

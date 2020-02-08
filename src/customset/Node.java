@@ -2,6 +2,7 @@ package customset;
 
 class Node<T extends Comparable<T>> implements Comparable<Node<T>> {
     T data;
+    Node<T> parent;
     Node<T> left;
     Node<T> right;
 
